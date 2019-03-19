@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> {% block title %} Blogapp || admin  {% endblock %} </title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/materialize/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('assets/materialize/css/materialize.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/materialize/css/main.css') }}">
+    {% block stylos %} {% endblock %}
+</head>
+<body class="blue-grey lighten-5">
+    <nav class="light-blue darken-3 z-depth-2">
+        <div class="nav-wrapper ">
+            <a href="#" class="brand-logo center show-on-large">BlogApp</a>
+            <a href="#" data-target="menu_responsive" class="sidenav-trigger show-on-large">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="hide-on-med-and-down">
+
+            </ul>
+        </div>
+    </nav>
+    <!-- items menu_responsive-->
+        <ul class="sidenav" id="menu_responsive">
+            <li class="light-blue darken-3">
+                <div class="user-view">
+                    <div class="background">
+                        <img src="{{ asset('assets/materialize/img/user-background.jpeg') }}" alt="">
+                    </div>
+                    <a href="#">
+                        <img src="{{ asset('assets/materialize/img/user2-160x160.jpg') }}" alt="" class="circle">
+                    </a>
+                    <a href="">
+                        <span class="name white-text">Cristian Gérman</span>
+                    </a>
+                    <a href="">
+                        <span class="email white-text">cgerman.89@gmail.com</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a href=""><i class="material-icons">wb_cloudy</i>&nbsp; Primer Element</a>
+            </li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Post</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    <!--  end items menu_responsive -->
+    <!-- options drop1-->
+        <ul id="drop1" class="dropdown-content">
+            <li><a href="#">one</a></li>
+            <li><a href="#">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#">three</a></li>
+        </ul>
+    <!-- end options drop1-->
+    <!-- container section-->
+        <section class="section container">
+                {% block content_app %}{% endblock %}
+        </section>
+    <!-- end container section-->
+    <!-- FOOTER -->
+    <footer class="page-footer grey lighten-3" style="position:fixed;bottom:0;left:0;width:100%;">
+        <div class="footer-copyright  grey-text text-darken-1">
+            <div class="container">
+                DG Solutions © 2019 Copyright
+                <a class="grey-text text-darken-1 right" href="#">More Info</a>
+            </div>
+        </div>
+    </footer>
+    <!-- end FOOTER -->
+    <!-- button flotant -->
+       <div class="fixed-action-btn">
+           <a href="#" class="btn-floating btn-large blue">
+               <i class="fas fa-info"></i>
+           </a>
+           <ul>
+               <li><a class="btn-floating blue darken-2"><i class="fab fa-facebook-square"></i></a></li>
+               <li><a class="btn-floating red darken-1"><i class="fab fa-youtube"></i></a></li>
+               <li><a class="btn-floating green"><i class="far fa-envelope"></i></a></li>
+           </ul>
+       </div>
+    <!-- end button-->
+<script src="{{ asset('assets/materialize/js/materialize.min.js') }}"></script>
+<script src="{{ asset('assets/materialize/js/config.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>
